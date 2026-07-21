@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<title>Planos SkyFit Centro Rio</title>
+<meta name="description" content="Conheça os planos da SkyFit Academia, unidade Centro Rio. Treino personalizado, aulas coletivas e estrutura completa a partir de R$109,90.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy: #002664;
+    --navy-deep: #00113a;
+    --navy-mid: #073a8c;
+    --crimson: #b9133e;
+    --crimson-deep: #8c0e2f;
+    --white: #ffffff;
+    --paper: #f4f5f9;
+    --ink: #0b1220;
+    --steel: #5c6a8a;
+    --hair: rgba(255,255,255,.14);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth; color-scheme:light; background:var(--paper);}
+  body{
+    margin:0; font-family:'Manrope', sans-serif;
+    background:var(--paper) !important; color:var(--ink) !important;
+    -webkit-font-smoothing:antialiased; color-scheme:light;
+  }
+  h1,h2,h3,.display{
+    font-family:'Anton', sans-serif; font-weight:400;
+    text-transform:uppercase; letter-spacing:.01em; line-height:1.03;
+  }
+  a{color:inherit;} img{max-width:100%;display:block;}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 24px;}
+
+  .stripe{height:14px;width:100%;background:linear-gradient(90deg,var(--navy) 0%,var(--navy) 60%,var(--crimson) 60%,var(--crimson) 90%,var(--white) 90%,var(--white) 100%);}
+  .stripe.reverse{background:linear-gradient(90deg,var(--white) 0%,var(--white) 10%,var(--crimson) 10%,var(--crimson) 40%,var(--navy) 40%,var(--navy) 100%);}
+
+  header{position:sticky; top:0; z-index:50; background:var(--navy-deep); border-bottom:1px solid var(--hair);}
+  .nav{display:flex; align-items:center; justify-content:space-between; gap:10px; padding:14px 20px; max-width:1160px; margin:0 auto;}
+  .brand{display:flex; align-items:center; gap:12px; color:var(--white);}
+  .brand .mark{width:36px;height:36px;display:flex;align-items:center;justify-content:center;}
+  .brand .mark img{width:100%;height:100%;object-fit:contain;}
+  .brand-name{font-family:'Anton',sans-serif; font-size:17px; letter-spacing:.03em; white-space:nowrap;}
+  .brand-name b{color:var(--crimson);}
+  .nav-cta{background:var(--crimson); color:var(--white); padding:10px 18px; border-radius:2px; font-weight:800; font-size:12.5px; letter-spacing:.04em; text-decoration:none; text-transform:uppercase; white-space:nowrap;}
+  @media (max-width:420px){
+    .brand-name{font-size:13px;}
+    .brand .mark{width:28px;height:28px;}
+    .nav-cta{padding:9px 12px; font-size:10.5px;}
+    .brand{gap:8px;}
+  }
+
+  .hero{position:relative; background:radial-gradient(120% 140% at 15% 0%, var(--navy-mid) 0%, var(--navy) 45%, var(--navy-deep) 100%); color:var(--white); overflow:hidden; padding:64px 0 56px; text-align:center;}
+  .hero .eyebrow{display:inline-flex; align-items:center; gap:10px; font-size:12px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:#cdd8f5; margin-bottom:20px; justify-content:center;}
+  .hero .eyebrow::before,.hero .eyebrow::after{content:""; width:26px;height:2px; background:var(--crimson);}
+  .hero h1{font-size:clamp(34px,5.5vw,58px); margin:0 auto 18px; max-width:16ch;}
+  .hero h1 span{color:var(--crimson);}
+  .hero p.lead{font-size:18px; line-height:1.6; color:#dbe2f5; max-width:56ch; margin:0 auto 34px;}
+  .hero-price{
+    display:inline-flex; flex-direction:column; align-items:center; gap:4px;
+    background:rgba(255,255,255,.06); border:1px solid var(--hair);
+    padding:22px 40px; border-radius:8px; margin-bottom:34px;
+    max-width:100%; box-sizing:border-box;
+  }
+  .hero-price .from{font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:#a9b6dd;}
+  .hero-price .value{font-family:'Anton',sans-serif; font-size:clamp(32px, 9vw, 56px); color:var(--white); line-height:1.05; white-space:nowrap;}
+  .hero-price .value sup{font-size:0.4em; vertical-align:super;}
+  .hero-price .value em{color:var(--crimson); font-style:normal;}
+  .hero-price .note{font-size:12px; color:#93a1c9;}
+  @media (max-width:480px){
+    .hero-price{padding:18px 16px;}
+  }
+  .hero-ctas{display:flex; gap:14px; flex-wrap:wrap; justify-content:center;}
+  .hero-trust{margin-top:14px; font-size:12.5px; color:#93a1c9; letter-spacing:.02em;}
+  .hero-trust + .hero-trust{margin-top:6px;}
+  .btn{display:inline-flex; align-items:center; gap:10px; padding:16px 30px; border-radius:2px; font-weight:800; font-size:14px; letter-spacing:.03em; text-transform:uppercase; text-decoration:none; border:2px solid transparent; transition:transform .25s ease, box-shadow .25s ease;}
+  .btn-primary{background:var(--crimson); color:var(--white);}
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 14px 30px rgba(185,19,62,.35);}
+  .btn-ghost{border-color:var(--hair); color:var(--white);}
+  .btn-ghost:hover{background:rgba(255,255,255,.08); transform:translateY(-2px);}
+
+  section{padding:76px 0; background:var(--paper);}
+  .section-head{max-width:680px; margin:0 auto 46px; text-align:center;}
+  .section-head .eyebrow{display:inline-flex; align-items:center; gap:10px; justify-content:center; font-size:12px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:var(--steel); margin-bottom:14px;}
+  .section-head .eyebrow::before{content:""; width:26px;height:2px; background:var(--crimson);}
+  .section-head h2{font-size:clamp(26px,4vw,40px); color:var(--navy-deep);}
+  .section-head p{color:var(--steel); font-size:16px; line-height:1.6;}
+
+  /* plans */
+  .plans{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:22px;}
+  @media (max-width:900px){
+    .plans{
+      display:flex; overflow-x:auto; gap:16px;
+      scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch;
+      padding-top:22px; padding-bottom:8px; margin:-22px -24px 0; padding-left:24px; padding-right:24px;
+      scrollbar-width:none;
+    }
+    .plans::-webkit-scrollbar{display:none;}
+    .plans .plan{flex:0 0 82%; scroll-snap-align:center;}
+  }
+  .scroll-hint{display:none; text-align:center; font-size:12.5px; color:var(--steel); margin-top:4px; margin-bottom:26px; align-items:center; justify-content:center; gap:8px;}
+  .scroll-hint svg{width:16px;height:16px;}
+  @media (max-width:900px){ .scroll-hint{display:flex;} }
+  .fine-print{font-size:12px; line-height:1.6; color:var(--steel); text-align:center; max-width:640px; margin:18px auto 0;}
+  .fine-print.light{color:#ffd7de; text-align:left; max-width:46ch; margin:14px 0 0;}
+  .plan{position:relative; background:var(--white); border:1px solid #e4e7f0; border-radius:8px; padding:32px 26px; display:flex; flex-direction:column; transition:transform .3s ease, box-shadow .3s ease;}
+  .plan:hover{transform:translateY(-6px); box-shadow:0 20px 44px rgba(0,19,58,.12);}
+  .plan.featured{border-color:var(--navy); box-shadow:0 20px 44px rgba(0,19,58,.12);}
+  .plan.featured::before{content:"MELHOR CUSTO-BENEFÍCIO"; position:absolute; top:-13px; left:50%; transform:translateX(-50%); background:var(--crimson); color:var(--white); font-size:10.5px; font-weight:800; letter-spacing:.06em; padding:6px 14px; border-radius:100px; white-space:nowrap;}
+  .plan .period{font-size:12px; font-weight:800; letter-spacing:.08em; color:var(--crimson); text-transform:uppercase; margin-bottom:8px;}
+  .plan h3{font-size:22px; color:var(--navy-deep); margin:0 0 14px; text-transform:none; font-family:'Manrope',sans-serif; font-weight:800;}
+  .plan .price{font-family:'Anton',sans-serif; font-size:34px; color:var(--navy); margin:0 0 6px; white-space:nowrap;}
+  .plan .price .per{font-family:'Manrope',sans-serif; font-weight:700; font-size:15px; color:var(--steel); text-transform:none;}
+  .plan .pay-info{font-size:12.5px; color:var(--steel); margin-bottom:14px;}
+  .plan .fidelity{font-size:11.5px; font-weight:700; color:var(--steel); text-transform:uppercase; letter-spacing:.03em; margin-bottom:18px; padding-bottom:18px; border-bottom:1px solid #eceef4;}
+  .plan ul{list-style:none; margin:0 0 24px; padding:0; display:grid; gap:10px; flex:1; align-content:start;}
+  .plan ul li{display:flex; gap:9px; align-items:flex-start; font-size:14px; color:var(--steel); line-height:1.5;}
+  .plan ul li.highlight{
+    background:#fff2f5; border:1px solid #f6c7d2; border-radius:6px;
+    padding:9px 11px; margin:2px 0; color:var(--crimson-deep); font-weight:800;
+  }
+  .plan ul li.highlight::before{content:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYjkxMzNlIiBzdHJva2Utd2lkdGg9IjEuOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cmVjdCB4PSI0IiB5PSI5IiB3aWR0aD0iMTYiIGhlaWdodD0iMTEiIHJ4PSIxIi8+PHBhdGggZD0iTTMuNSA5aDE3djMuMmgtMTd6Ii8+PHBhdGggZD0iTTEyIDkuMnYxMC44Ii8+PHBhdGggZD0iTTEyIDkuMmMtMS0zLTUuMi0zLjgtNS4yLTFDNi44IDkuNyA5IDkuMiAxMiA5LjJ6TTEyIDkuMmMxLTMgNS4yLTMuOCA1LjItMWMwIDEuNS0yLjIgMS01LjIgMXoiLz48L3N2Zz4="); width:16px; height:16px; display:inline-block;}
+  .plan ul li.highlight.shirt::before{content:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYjkxMzNlIiBzdHJva2Utd2lkdGg9IjEuOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNOCA0LjNMMTIgNmw0LTEuNyA0IDMtMi42IDIuNkwxNiA4LjRWMjBIOFY4LjRsLTEuNCAxLjVMNCA3LjN6Ii8+PC9zdmc+"); width:16px; height:16px; display:inline-block;}
+  .plan ul li::before{content:"✓"; flex:none; color:var(--crimson); font-weight:800;}
+  .plan .btn{width:100%; justify-content:center; box-sizing:border-box;}
+
+  /* promo banner */
+  .promo{background:linear-gradient(120deg, var(--crimson-deep) 0%, var(--crimson) 100%); border-radius:10px; padding:44px 40px; color:var(--white); display:flex; align-items:center; justify-content:space-between; gap:30px; flex-wrap:wrap;}
+  .promo-copy .tag{display:inline-block; font-size:11.5px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; background:rgba(255,255,255,.18); padding:6px 14px; border-radius:100px; margin-bottom:14px;}
+  .promo-copy h3{font-size:clamp(24px,3vw,32px); margin:0 0 10px; text-transform:none; font-family:'Anton',sans-serif;}
+  .promo-copy p{font-size:15px; color:#ffe1e8; max-width:46ch; margin:0; line-height:1.5;}
+  .promo-price{text-align:center; flex:none;}
+  .promo-price .old{font-size:18px; text-decoration:line-through; color:#ffc2cf;}
+  .promo-price .new{font-family:'Anton',sans-serif; font-size:52px; line-height:1;}
+  .promo-price .new small{font-size:18px;}
+  .promo-price .btn{margin-top:14px; background:var(--white); color:var(--crimson-deep);}
+
+  /* diferenciais */
+  .diffs{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:22px;}
+  .diff{background:var(--white); border:1px solid #e4e7f0; border-radius:8px; padding:26px; text-align:center;}
+  .diff .icon{
+    width:76px;height:76px; margin:0 auto 22px; display:flex; align-items:center; justify-content:center;
+    border-radius:50%; position:relative;
+    background: radial-gradient(circle at 30% 26%, #3a6fc4 0%, #103a86 45%, #00113a 100%);
+    box-shadow:
+      0 22px 28px -10px rgba(0,17,58,.55),
+      0 4px 8px rgba(0,17,58,.3),
+      inset 0 3px 4px rgba(255,255,255,.55),
+      inset 0 -10px 16px rgba(0,0,0,.4),
+      inset 4px 0 8px rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.15);
+    transition:transform .35s cubic-bezier(.2,.8,.3,1.4), box-shadow .35s ease;
+  }
+  .diff:hover .icon{
+    transform:translateY(-4px) rotate(-4deg) scale(1.06);
+    box-shadow:
+      0 30px 34px -10px rgba(0,17,58,.6),
+      0 6px 10px rgba(0,17,58,.35),
+      inset 0 3px 4px rgba(255,255,255,.6),
+      inset 0 -10px 16px rgba(0,0,0,.4);
+  }
+  .diff .icon::before{
+    content:""; position:absolute; left:50%; bottom:-14px; width:46px; height:12px;
+    background:radial-gradient(ellipse, rgba(0,17,58,.32) 0%, rgba(0,17,58,0) 72%);
+    transform:translateX(-50%); border-radius:50%; z-index:0;
+    transition:transform .35s ease, opacity .35s ease;
+  }
+  @media (max-width:900px){
+    .diff .icon{animation: icon-float3d 3.4s ease-in-out infinite;}
+    .diff .icon::before{animation: icon-shadow3d 3.4s ease-in-out infinite;}
+    .diff:nth-child(2) .icon, .diff:nth-child(2) .icon::before{animation-delay:.5s;}
+    .diff:nth-child(3) .icon, .diff:nth-child(3) .icon::before{animation-delay:1s;}
+    .diff:nth-child(4) .icon, .diff:nth-child(4) .icon::before{animation-delay:1.5s;}
+    .diff:nth-child(5) .icon, .diff:nth-child(5) .icon::before{animation-delay:.25s;}
+    .diff:nth-child(6) .icon, .diff:nth-child(6) .icon::before{animation-delay:.75s;}
+  }
+  @keyframes icon-float3d{
+    0%,100%{ transform:translateY(0) rotate(0deg); }
+    50%{ transform:translateY(-9px) rotate(-5deg); }
+  }
+  @keyframes icon-shadow3d{
+    0%,100%{ transform:translateX(-50%) scale(1); opacity:.9; }
+    50%{ transform:translateX(-50%) scale(.72); opacity:.45; }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .diff .icon, .diff .icon::before{animation:none !important;}
+  }
+  .diff .icon::after{
+    content:""; position:absolute; top:8px; left:14px; width:22px; height:11px;
+    background:rgba(255,255,255,.5); border-radius:50%; filter:blur(3px);
+  }
+  .diff .icon svg{width:30px;height:30px; position:relative; z-index:1; filter:drop-shadow(0 2px 2px rgba(0,0,0,.25));}
+  .diff .icon.blink-icon svg .blink-eyes{transform-origin:center; animation:blink 3.2s ease-in-out infinite;}
+  @media (prefers-reduced-motion: reduce){
+    .diff .icon.blink-icon svg .blink-eyes{animation:none !important;}
+    .diff:hover .icon{transform:none;}
+  }
+  @keyframes blink{
+    0%, 88%, 100%{ transform:scaleY(1); }
+    92%{ transform:scaleY(0.1); }
+  }
+  .diff h3{font-size:16px; text-transform:none; font-family:'Manrope',sans-serif; font-weight:800; color:var(--navy-deep); margin:0 0 8px;}
+  .diff p{font-size:13.5px; color:var(--steel); line-height:1.5; margin:0;}
+
+  /* estrutura */
+  .stat-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:18px; margin-bottom:36px;}
+  .stat-card{background:rgba(255,255,255,.06); border:1px solid var(--hair); border-radius:8px; padding:26px 16px; text-align:center; transition:transform .3s ease, background .3s ease;}
+  .stat-card:hover{transform:translateY(-6px); background:rgba(255,255,255,.1);}
+  .stat-num{font-family:'Anton',sans-serif; font-size:44px; color:var(--crimson); line-height:1;}
+  .stat-label{font-size:12.5px; color:#a9b6dd; text-transform:uppercase; letter-spacing:.04em; margin-top:8px;}
+  .amenities{display:flex; flex-wrap:wrap; justify-content:center; gap:14px;}
+  .amenity{background:rgba(255,255,255,.06); border:1px solid var(--hair); border-radius:100px; padding:12px 22px; font-size:14px; color:#dbe2f5; display:inline-flex; align-items:center; gap:9px;}
+  .amenity svg{width:18px;height:18px; flex:none; stroke:#ff6b85;}
+
+  /* horarios + local */
+  .info-grid{display:grid; grid-template-columns:1fr 1fr; gap:26px;}
+  .info-card{background:var(--white); border:1px solid #e4e7f0; border-radius:8px; padding:32px;}
+  .info-card h3{font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:var(--crimson); font-family:'Manrope',sans-serif; font-weight:800; margin:0 0 20px;}
+  .hours-row{display:flex; justify-content:space-between; padding:12px 0; border-bottom:1px solid #eceef4; font-size:14.5px;}
+  .hours-row:last-child{border-bottom:none;}
+  .hours-row span:first-child{color:var(--steel);}
+  .hours-row span:last-child{font-weight:800; color:var(--navy-deep);}
+  .addr{font-size:15px; line-height:1.7; color:var(--ink); margin-bottom:18px;}
+  .addr b{display:block; color:var(--navy-deep); font-size:16px; margin-bottom:4px;}
+  .social-row{display:flex; align-items:center; gap:10px; font-size:14.5px; color:var(--steel);}
+  .social-row svg{width:18px;height:18px; flex:none;}
+  .social-row b{color:var(--navy-deep);}
+  @media (max-width:760px){.info-grid{grid-template-columns:1fr;}}
+
+  /* faq */
+  .faq{max-width:760px; margin:0 auto;}
+  .qa{border-bottom:1px solid #e4e7f0; padding:20px 0;}
+  .qa h3{font-family:'Manrope',sans-serif; font-weight:800; font-size:15.5px; text-transform:none; color:var(--navy-deep); margin:0 0 8px;}
+  .qa p{color:var(--steel); font-size:14.5px; line-height:1.6; margin:0;}
+
+  .final{background:linear-gradient(120deg, var(--navy) 0%, var(--navy-deep) 100%); color:var(--white); text-align:center;}
+  .final h2{font-size:clamp(26px,4.2vw,40px); margin:0 0 14px;}
+  .final p{color:#cfd7ef; font-size:15.5px; max-width:52ch; margin:0 auto 28px;}
+
+  footer{background:var(--navy-deep); color:#93a1c9; font-size:13px; text-align:center; padding:26px 0;}
+  .credit{margin-top:8px; font-size:12px; color:#5c6a8a;}
+  .work-with-us{margin-top:14px; font-size:12.5px; color:#7c89a8;}
+  .work-with-us a{color:var(--crimson); font-weight:700; text-decoration:none;}
+  .work-with-us a:hover{text-decoration:underline;}
+
+  .trust-strip{background:var(--navy); padding:16px 0;}
+  .trust-strip .wrap{
+    display:flex; flex-wrap:wrap; justify-content:center; align-items:center;
+    gap:10px 28px; font-size:12px; color:#cdd8f5; letter-spacing:.02em; text-align:center;
+  }
+  .trust-strip span{position:relative;}
+  .trust-strip span + span::before{
+    content:"•"; position:absolute; left:-16px; color:var(--hair);
+  }
+  @media (max-width:640px){
+    .trust-strip span + span::before{display:none;}
+  }
+
+  .personal-cta{
+    background:linear-gradient(120deg, var(--navy-mid) 0%, var(--navy-deep) 100%);
+    border-radius:10px; padding:40px 40px; display:flex; align-items:center; justify-content:space-between;
+    gap:28px; flex-wrap:wrap; position:relative; overflow:hidden;
+  }
+  .personal-cta::before{
+    content:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPjxwYXRoIGQ9Ik0yIDEwaDEuNnY0SDJ6TTIwLjQgMTBIMjJ2NGgtMS42ek00LjggNy41aDEuOHY5SDQuOHpNMTcuNCA3LjVoMS44djloLTEuOHpNNy42IDExaDguOHYySDcuNnoiLz48L3N2Zz4=");
+    position:absolute; right:-10px; bottom:-30px; width:180px; height:180px; opacity:.08;
+  }
+  .personal-cta-text{position:relative; z-index:1;}
+  .personal-cta-text .tag{
+    display:inline-flex; align-items:center; gap:8px; font-size:11.5px; font-weight:800; letter-spacing:.06em;
+    text-transform:uppercase; color:var(--white); background:rgba(255,255,255,.12); padding:7px 14px; border-radius:100px; margin-bottom:14px;
+  }
+  .personal-cta-text h3{font-size:26px; color:var(--white); margin:0 0 10px; font-family:'Anton',sans-serif; font-weight:400; text-transform:uppercase; letter-spacing:.01em;}
+  .personal-cta-text p{font-size:15px; color:#cfd7ef; margin:0; max-width:52ch; line-height:1.6;}
+  .btn-outline-navy{
+    display:inline-flex; align-items:center; gap:8px; flex:none; position:relative; z-index:1;
+    background:var(--crimson); color:var(--white); padding:16px 30px;
+    border-radius:2px; font-weight:800; font-size:13.5px; letter-spacing:.03em;
+    text-transform:uppercase; text-decoration:none; border:2px solid transparent;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .btn-outline-navy:hover{transform:translateY(-2px); box-shadow:0 14px 30px rgba(185,19,62,.4);}
+  @media (max-width:640px){
+    .personal-cta{flex-direction:column; align-items:flex-start; text-align:left; padding:32px 28px;}
+    .btn-outline-navy{width:100%; justify-content:center; box-sizing:border-box;}
+  }
+  .credit a{color:var(--crimson); font-weight:700; text-decoration:none;}
+  .credit a:hover{text-decoration:underline;}
+
+  @media (max-width:640px){
+    .promo{flex-direction:column; text-align:center;}
+    .promo-copy p{max-width:none;}
+  }
+  /* ---------- scroll reveal + effects ---------- */
+  .reveal{opacity:0; transform:translateY(26px); transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1);}
+  .reveal.is-visible{opacity:1; transform:translateY(0);}
+  .stagger-item{opacity:0; transform:translateY(22px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal-stagger.is-visible .stagger-item{opacity:1; transform:translateY(0);}
+  .plan{transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease, opacity .6s ease;}
+  .diff{transition:transform .3s ease, box-shadow .3s ease;}
+  .diff:hover{transform:translateY(-6px); box-shadow:0 18px 36px rgba(0,19,58,.1);}
+  .info-card{transition:transform .3s ease, box-shadow .3s ease;}
+  .info-card:hover{transform:translateY(-4px); box-shadow:0 18px 36px rgba(0,19,58,.08);}
+  .promo{transition:transform .35s ease;}
+  .promo:hover{transform:translateY(-4px);}
+  .promo-price .btn{transition:transform .25s ease, box-shadow .25s ease;}
+  .promo-price .btn:hover{transform:translateY(-2px); box-shadow:0 14px 28px rgba(0,0,0,.25);}
+  .hero-price{transition:transform .4s ease, box-shadow .4s ease; animation:priceGlow 3s ease-in-out infinite;}
+  @keyframes priceGlow{
+    0%,100%{box-shadow:0 0 0 rgba(185,19,62,0);}
+    50%{box-shadow:0 0 34px rgba(185,19,62,.25);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .reveal,.stagger-item{opacity:1 !important; transform:none !important; transition:none !important;}
+    .hero-price{animation:none !important;}
+    .plan,.diff,.info-card,.promo,.btn{transition:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="brand">
+      <span class="mark"><img src="data:image/png;base64,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" alt="SkyFit"></span>
+      <span class="brand-name">SKYFIT <b>CENTRO RIO</b></span>
+    </div>
+    <a class="nav-cta" href="https://api.whatsapp.com/send?phone=5521972292545&text=Oi!%20Quero%20saber%20mais%20sobre%20os%20planos%20da%20SkyFit%20Centro%20Rio." target="_blank" rel="noopener">Falar no WhatsApp</a>
+  </div>
+</header>
+
+<div class="stripe"></div>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">SkyFit Academia · Centro Rio</span>
+    <h1>Treino completo. <span>Preço justo.</span></h1>
+    <p class="lead">Treino personalizado, aulas coletivas e estrutura completa. Escolha o plano que combina com sua rotina.</p>
+    <div class="hero-price">
+      <span class="from">Planos a partir de</span>
+      <span class="value">R$ <em>109,90</em>/mês</span>
+      <span class="note">Plano recorrente horário especial · condições abaixo</span>
+    </div>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="https://api.whatsapp.com/send?phone=5521972292545&text=Oi!%20Quero%20me%20matricular%20na%20SkyFit%20Centro%20Rio." target="_blank" rel="noopener">Quero me matricular</a>
+      <a class="btn btn-ghost" href="#planos">Ver todos os planos</a>
+    </div>
+  </div>
+</section>
+
+<div class="stripe reverse"></div>
+
+<section id="planos">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Planos</span>
+      <h2>Escolha o plano ideal pra você</h2>
+      <p>Todos os planos incluem treino personalizado e aulas coletivas. Veja o que muda em cada um.</p>
+    </div>
+    <div class="plans reveal-stagger reveal">
+
+      <div class="plan stagger-item">
+        <span class="period">Day Use</span>
+        <h3>Válido por 1 dia</h3>
+        <div class="price">R$59,90</div>
+        <div class="pay-info">Pago direto na recepção da unidade · débito, crédito ou PIX</div>
+        <div class="fidelity">Sem fidelidade · válido só no dia</div>
+        <ul>
+          <li>Acesso completo à unidade por um dia</li>
+          <li>Acesso à musculação</li>
+          <li>Aulas coletivas do dia</li>
+          <li>Ideal pra conhecer a estrutura antes de assinar um plano</li>
+        </ul>
+        <a class="btn btn-primary" href="https://api.whatsapp.com/send?phone=5521972292545&text=Oi!%20Quero%20saber%20mais%20sobre%20o%20DAY%20USE%20da%20SkyFit%20Centro%20Rio." target="_blank" rel="noopener">Quero esse plano</a>
+      </div>
+
+      <div class="plan stagger-item">
+        <span class="period">Mensal</span>
+        <h3>Sem fidelidade</h3>
+        <div class="price">R$219,90<span class="per">/mês</span></div>
+        <div class="pay-info">Débito, crédito ou PIX</div>
+        <div class="fidelity">Sem fidelidade</div>
+        <ul>
+          <li>Treino personalizado</li>
+          <li>Aulas coletivas</li>
+          <li>Acesso livre a todas as modalidades</li>
+          <li>Profissionais especializados</li>
+          <li>SkyDance, SkyBox, SkyCardio</li>
+          <li>Acesso a todas as unidades da rede SkyFit</li>
+          <li>Treino registrado no app SkyFit</li>
+        </ul>
+        <a class="btn btn-primary" href="https://evo-totem.w12app.com.br/skyfitacademia/611/site/landing-page/checkout/27737/0" target="_blank" rel="noopener">Quero esse plano</a>
+      </div>
+
+      <div class="plan stagger-item">
+        <span class="period">Recorrente</span>
+        <h3>Crédito recorrente</h3>
+        <div class="price">R$169,90<span class="per">/mês</span></div>
+        <div class="pay-info">Crédito recorrente · mínimo R$509,70 (3 meses)</div>
+        <div class="fidelity">Fidelidade de 3 meses</div>
+        <ul>
+          <li>Treino personalizado</li>
+          <li>Aulas coletivas</li>
+          <li>Acesso livre a todas as modalidades</li>
+          <li>Profissionais especializados</li>
+          <li>SkyDance, SkyBox, SkyCardio</li>
+          <li>Acesso a todas as unidades da rede SkyFit</li>
+          <li>Comodidade do pagamento recorrente</li>
+          <li>Treino registrado no app SkyFit</li>
+        </ul>
+        <a class="btn btn-primary" href="https://evo-totem.w12app.com.br/skyfitacademia/611/site/landing-page/checkout/27735/0" target="_blank" rel="noopener">Quero esse plano</a>
+      </div>
+
+      <div class="plan featured stagger-item">
+        <span class="period">Anual</span>
+        <h3>Crédito parcelado</h3>
+        <div class="price">12x R$149,90</div>
+        <div class="pay-info">Crédito parcelado · R$1.798,80 no total</div>
+        <div class="fidelity">Fidelidade de 12 meses</div>
+        <ul>
+          <li>Avaliação física trimestral</li>
+          <li>Treino personalizado</li>
+          <li>Aulas coletivas</li>
+          <li>Acesso livre a todas as modalidades</li>
+          <li>Profissionais especializados</li>
+          <li>SkyDance, SkyBox, SkyCardio</li>
+          <li class="highlight">05 convidados por mês</li>
+          <li class="highlight shirt">Camisa de brinde</li>
+          <li>Acesso somente na unidade Centro Rio</li>
+          <li>Treino registrado no app SkyFit</li>
+        </ul>
+        <a class="btn btn-primary" href="https://evo-totem.w12app.com.br/skyfitacademia/611/site/landing-page/checkout/27733/0" target="_blank" rel="noopener">Quero esse plano</a>
+      </div>
+
+      <div class="plan stagger-item">
+        <span class="period">Exclusivo Unidade</span>
+        <h3>Recorrente 12 meses</h3>
+        <div class="price">R$149,90<span class="per">/mês</span></div>
+        <div class="pay-info">Crédito · R$1.798,80 no total (12 meses)</div>
+        <div class="fidelity">Fidelidade de 12 meses</div>
+        <ul>
+          <li>Treino personalizado</li>
+          <li>Aulas coletivas</li>
+          <li class="highlight">02 convidados por mês</li>
+          <li>Acesso somente na unidade Centro Rio</li>
+          <li>Treino registrado no app SkyFit</li>
+        </ul>
+        <a class="btn btn-primary" href="https://api.whatsapp.com/send?phone=5521972292545&text=Oi!%20Quero%20saber%20mais%20sobre%20o%20plano%20EXCLUSIVO%20UNIDADE%20da%20SkyFit%20Centro%20Rio." target="_blank" rel="noopener">Quero esse plano</a>
+      </div>
+
+      <div class="plan stagger-item">
+        <span class="period">Personal Autônomo</span>
+        <h3>Pra dar aula na SkyFit</h3>
+        <div class="price">R$99,90<span class="per">/mês</span></div>
+        <div class="pay-info">Débito, crédito ou PIX</div>
+        <div class="fidelity">Sem fidelidade · exclusivo Centro Rio</div>
+        <ul>
+          <li class="highlight">Aulas sem limite com seus próprios alunos</li>
+          <li>Acesso também pra você treinar na unidade</li>
+          <li>Estrutura completa da unidade</li>
+          <li>Válido somente na SkyFit Centro Rio</li>
+          <li class="highlight shirt">Camisa personal obrigatória: R$120,00 (todos os tamanhos em estoque)</li>
+        </ul>
+        <a class="btn btn-primary" href="https://api.whatsapp.com/send?phone=5521972292545&text=Oi!%20Sou%20personal%20e%20quero%20saber%20mais%20sobre%20o%20plano%20PERSONAL%20AUT%C3%94NOMO%20da%20SkyFit%20Centro%20Rio." target="_blank" rel="noopener">Quero esse plano</a>
+      </div>
+
+    </div>
+    <p class="scroll-hint">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 5l-5 7 5 7M16 5l5 7-5 7"/></svg>
+      Arraste pro lado pra ver todos os planos
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 5l-5 7 5 7M16 5l5 7-5 7"/></svg>
+    </p>
+    <p class="fine-print">Planos Recorrente, Anual e Exclusivo Unidade têm pagamento via cartão de crédito recorrente. Em caso de cancelamento antes do fim da fidelidade, incide multa de 20% sobre o valor de cada mês restante do contrato.</p>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="promo reveal-stagger reveal">
+      <div class="promo-copy stagger-item">
+        <span class="tag">Exclusivo SkyFit Centro Rio</span>
+        <h3>Plano Recorrente<br>Horário Especial</h3>
+        <p>Ideal pra quem busca mais tranquilidade: treinos permitidos das 08h30 às 11h e das 13h30 às 16h. Fidelidade de 3 meses.</p>
+        <p class="fine-print light">Cartão de crédito recorrente. Cancelamento antecipado: multa de 20% sobre cada mês restante.</p>
+      </div>
+      <div class="promo-price stagger-item">
+        <div class="old">De R$149,90</div>
+        <div class="new">R$109,90</div>
+        <a class="btn" href="https://api.whatsapp.com/send?phone=5521972292545&text=Oi!%20Quero%20saber%20mais%20sobre%20o%20plano%20HOR%C3%81RIO%20ESPECIAL%20da%20SkyFit%20Centro%20Rio." target="_blank" rel="noopener">Aproveitar agora</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Diferenciais</span>
+      <h2>O que tem incluso</h2>
+    </div>
+    <div class="diffs reveal-stagger reveal">
+      <div class="diff stagger-item"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l2.95 6.28L22 9.77l-5.2 4.86L18 21.5l-6-3.4-6 3.4 1.2-6.87L2 9.77l7.05-1L12 2.5z"/></svg></div><h3>Treino personalizado</h3><p>Incluso em todos os planos, com acompanhamento de profissionais especializados.</p></div>
+      <div class="diff stagger-item"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9.5" r="2.4"/><path d="M3 20.5c0-3.3 2.6-5.5 6-5.5s6 2.2 6 5.5"/><path d="M15.2 15.3c2.6.4 4.3 2.2 4.3 5.2"/></svg></div><h3>Aulas coletivas</h3><p>SkyDance, SkyBox e SkyCardio pra variar o treino sem monotonia.</p></div>
+      <div class="diff stagger-item"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1"/><path d="M9 12.5l2 2 4-4.5"/></svg></div><h3>Avaliação física</h3><p>Trimestral no plano Anual, pra acompanhar sua evolução de perto.</p></div>
+      <div class="diff stagger-item"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V6l8-4 8 4v15"/><path d="M2 21h20"/><path d="M9 9.3h.01M9 13.3h.01M9 17.3h.01M15 9.3h.01M15 13.3h.01M15 17.3h.01"/></svg></div><h3>Estrutura completa</h3><p>4 andares pensados pra treinar com conforto do início ao fim.</p></div>
+      <div class="diff stagger-item"><div class="icon blink-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8V6a2 2 0 0 1 2-2h2"/><path d="M16 4h2a2 2 0 0 1 2 2v2"/><path d="M20 16v2a2 2 0 0 1-2 2h-2"/><path d="M8 20H6a2 2 0 0 1-2-2v-2"/><path d="M9 15.2c1.2 1 4.8 1 6 0"/><g class="blink-eyes"><line x1="9" y1="11" x2="9" y2="11" stroke-width="2.6"/><line x1="15" y1="11" x2="15" y2="11" stroke-width="2.6"/></g></svg></div><h3>Acesso por reconhecimento facial</h3><p>Entra na unidade sem cartão, chaveiro ou pulseira. Só com o seu rosto.</p></div>
+      <div class="diff stagger-item"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8a2 2 0 0 1 2-2h1.3l1-1.6h7.4l1 1.6H18a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3.4"/></svg></div><h3>Ambiente instagramável</h3><p>Painel decorado, letreiro de neon e espelhos grandes pra registrar o treino. E, diferente da maioria das academias, aqui é super claro, sem aquele clima escuro comum por aí.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--navy-deep); color:var(--white);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="color:#a9b6dd;">Nossa estrutura</span>
+      <h2 style="color:var(--white);">Uma academia feita pra durar o dia todo</h2>
+      <p style="color:#a9b6dd;">4 andares completos, pensados pra quem treina de manhã, na hora do almoço ou depois do expediente.</p>
+    </div>
+    <div class="stat-grid reveal-stagger reveal">
+      <div class="stat-card stagger-item"><div class="stat-num"><span class="count" data-target="4">0</span></div><div class="stat-label">Andares</div></div>
+      <div class="stat-card stagger-item"><div class="stat-num"><span class="count" data-target="20">0</span></div><div class="stat-label">Esteiras</div></div>
+      <div class="stat-card stagger-item"><div class="stat-num"><span class="count" data-target="10">0</span></div><div class="stat-label">Box de banho</div></div>
+      <div class="stat-card stagger-item"><div class="stat-num"><span class="count" data-target="4">0</span>+<span class="count" data-target="4">0</span></div><div class="stat-label">Banheiros individuais (masc. e fem.)</div></div>
+    </div>
+    <div class="amenities reveal-stagger reveal">
+      <div class="amenity stagger-item"><svg viewBox="0 0 24 24" fill="none" stroke="#b9133e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 6.2a4.2 4.2 0 0 0-8 1.3c0 .9.3 1.5.8 2l-2.8 2.8"/><path d="M4 11.3h15"/><path d="M8 15.3v2M12 15.3v3M16 15.3v2"/></svg> Chuveiros a gás, com água quente sempre</div>
+      <div class="amenity stagger-item"><svg viewBox="0 0 24 24" fill="none" stroke="#b9133e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7.5a4 4 0 0 1 4-4h5a4 4 0 0 1 0 8h-1.5v5a2 2 0 0 1-2 2H6.5"/><circle cx="18.3" cy="7.5" r="1"/><path d="M20 11l1.6 1M20 4l1.6-1M21.3 7.5H23"/></svg> Secador de cabelo no banheiro feminino</div>
+      <div class="amenity stagger-item"><svg viewBox="0 0 24 24" fill="none" stroke="#b9133e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7.3v5l3.5 2"/></svg> Aulas coletivas de 30 minutos, no ritmo de quem treina no Centro</div>
+    </div>
+    <p class="fine-print" style="color:#93a1c9;"><svg viewBox="0 0 24 24" fill="none" stroke="#93a1c9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-4px;margin-right:4px;"><path d="M3 4h2l2.3 12a2 2 0 0 0 2 1.7h7a2 2 0 0 0 2-1.6L21 8H6.2"/><circle cx="10" cy="20" r="1.3"/><circle cx="17" cy="20" r="1.3"/></svg>Loja de conveniência na unidade: água, isotônicos e energéticos à venda. Em breve, também bonés, camisas e garrafas personalizadas SkyFit.</p>
+  </div>
+</section>
+
+<section id="info">
+  <div class="wrap">
+    <div class="info-grid reveal-stagger reveal">
+      <div class="info-card stagger-item">
+        <h3>Horário de Funcionamento</h3>
+        <div class="hours-row"><span>Segunda a sexta</span><span>05:30 às 21:30</span></div>
+        <div class="hours-row"><span>Sábados</span><span>09:00 às 14:00</span></div>
+        <div class="hours-row"><span>Domingo e feriados</span><span>Fechado</span></div>
+      </div>
+      <div class="info-card stagger-item">
+        <h3>Onde estamos</h3>
+        <div class="addr">
+          <b>SkyFit Academia · Centro Rio</b>
+          Rua Sete de Setembro, nº 75, Centro, Rio de Janeiro, RJ
+        </div>
+        <div class="social-row"><svg viewBox="0 0 24 24" fill="none" stroke="#0b1220" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h3l1.4 4-2 1.6a11.5 11.5 0 0 0 5 5l1.6-2 4 1.4v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg> <b>(21) 97229-2545</b></div>
+        <div class="social-row"><svg viewBox="0 0 24 24" fill="none" stroke="#0b1220" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="0.8" fill="#0b1220" stroke="none"/></svg> <b>@skyfitcentrorio</b></div>
+        <div class="social-row"><svg viewBox="0 0 24 24" fill="none" stroke="#0b1220" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 6.5l9 6.5 9-6.5"/></svg> <b><a href="mailto:centrorio@skyfitacademias.com.br" style="color:inherit;text-decoration:none;">centrorio@skyfitacademias.com.br</a></b></div>
+        <div class="social-row"><svg viewBox="0 0 24 24" fill="none" stroke="#0b1220" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l1.4-4.8A2 2 0 0 1 6.3 6.7h11.4a2 2 0 0 1 1.9 1.5L21 13"/><path d="M3 13h18v3.6a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1V16H6v.6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><circle cx="7.3" cy="16.6" r="1.3"/><circle cx="16.7" cy="16.6" r="1.3"/></svg> A unidade não possui estacionamento próprio</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="personal-cta reveal">
+      <div class="personal-cta-text">
+        <span class="tag">Quer treinar acompanhado?</span>
+        <h3>Conheça nossos personal trainers</h3>
+        <p>Cada um com uma especialidade: emagrecimento, hipertrofia, funcional, lesões e mais. Encontre o profissional certo pro seu objetivo.</p>
+      </div>
+      <a class="btn btn-outline-navy" href="https://personalsky.vercel.app/" target="_blank" rel="noopener">Ver personal trainers</a>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Dúvidas frequentes</span>
+      <h2>Perguntas Frequentes</h2>
+    </div>
+    <div class="faq reveal-stagger reveal">
+      <div class="qa stagger-item"><h3>Qual plano não tem fidelidade?</h3><p>O plano Mensal, pago por débito, crédito ou PIX, não tem fidelidade. Você pode cancelar quando quiser.</p></div>
+      <div class="qa stagger-item"><h3>Os planos Anual e Exclusivo Unidade têm fidelidade?</h3><p>Sim, ambos têm fidelidade de 12 meses. O plano Recorrente tem fidelidade de 3 meses.</p></div>
+      <div class="qa stagger-item"><h3>Posso treinar em outras unidades da SkyFit?</h3><p>Os planos Mensal e Recorrente dão acesso a todas as unidades da rede. O Anual e o Exclusivo Unidade valem somente na SkyFit Centro Rio.</p></div>
+      <div class="qa stagger-item"><h3>O que acontece se eu cancelar antes do fim da fidelidade?</h3><p>Nos planos com fidelidade (Recorrente, Anual e Exclusivo Unidade), o cancelamento antecipado tem multa de 20% sobre o valor de cada mês restante do contrato.</p></div>
+      <div class="qa stagger-item"><h3>Vocês aceitam TotalPass ou Wellhub?</h3><p>Sim! Aceitamos TotalPass a partir do plano TP2 e Wellhub a partir do plano Silver.</p></div>
+      <div class="qa stagger-item"><h3>A unidade tem estacionamento?</h3><p>Não, a SkyFit Centro Rio não possui estacionamento próprio.</p></div>
+      <div class="qa stagger-item"><h3>Sou personal autônomo, posso dar aula na SkyFit?</h3><p>Sim! Temos o plano Personal Autônomo (R$99,90/mês, sem fidelidade, exclusivo Centro Rio), com aulas sem limite pra seus próprios alunos e acesso também pra você treinar na unidade. É obrigatório o uso da camisa personal (R$120,00, disponível em todos os tamanhos).</p></div>
+      <div class="qa stagger-item"><h3>Qual o horário de atendimento no WhatsApp?</h3><p>Nosso WhatsApp responde 24h por dia. Das 5h30 às 21h30 o atendimento é humano + IA; fora desse horário, a IA continua te ajudando até a equipe assumir.</p></div>
+      <div class="qa stagger-item"><h3>Como faço pra me matricular?</h3><p>Chama no WhatsApp pelo botão acima. A equipe te passa todos os detalhes e já agenda sua avaliação.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>Bora começar hoje?</h2>
+    <p>Fale com a equipe da SkyFit Centro Rio e garanta seu plano.</p>
+    <a class="btn btn-primary" href="https://api.whatsapp.com/send?phone=5521972292545&text=Oi!%20Quero%20me%20matricular%20na%20SkyFit%20Centro%20Rio." target="_blank" rel="noopener">Falar no WhatsApp</a>
+  </div>
+</section>
+
+<div class="stripe"></div>
+
+<div class="trust-strip">
+  <div class="wrap">
+    <span>TotalPass (TP2+) e Wellhub (Silver)</span>
+    <span>Rede que mais cresce no Brasil</span>
+    <span>WhatsApp com resposta 24h</span>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    © 2026 SkyFit Academia · Centro Rio. Fortalecendo a nossa nação.
+    <div class="work-with-us">Quer trabalhar com a gente? Manda seu currículo pra <a href="mailto:skyfitcentrorio@gmail.com">skyfitcentrorio@gmail.com</a></div>
+    <div class="credit">Feito por <a href="https://instagram.com/R_ENAN_R" target="_blank" rel="noopener">@R_ENAN_R</a></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var targets = document.querySelectorAll('.reveal');
+  if(prefersReduced || !('IntersectionObserver' in window)){
+    targets.forEach(function(el){ el.classList.add('is-visible'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  targets.forEach(function(el){ io.observe(el); });
+})();
+
+(function(){
+  var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var counters = document.querySelectorAll('.count');
+  if(!counters.length) return;
+  if(prefersReduced || !('IntersectionObserver' in window)){
+    counters.forEach(function(el){ el.textContent = el.getAttribute('data-target'); });
+    return;
+  }
+  function animateCount(el){
+    var target = parseInt(el.getAttribute('data-target'), 10) || 0;
+    var duration = 1000;
+    var startTime = null;
+    function step(timestamp){
+      if(!startTime) startTime = timestamp;
+      var progress = Math.min((timestamp - startTime) / duration, 1);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(eased * target);
+      if(progress < 1){ requestAnimationFrame(step); }
+    }
+    requestAnimationFrame(step);
+  }
+  var cio = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        animateCount(entry.target);
+        cio.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.4 });
+  counters.forEach(function(el){ cio.observe(el); });
+})();
+</script>
+</body>
+</html>

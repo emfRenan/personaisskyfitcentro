@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
-<title>Viviane Personal — SkyFit Academia</title>
-<meta name="description" content="Treino sob medida com a Viviane, personal trainer da SkyFit Academia — Centro Rio. Fortalecimento, hipertrofia, reabilitação de lesões e emagrecimento.">
+<title>Viviane Personal · SkyFit Academia</title>
+<meta name="description" content="Treino sob medida com a Viviane, personal trainer da SkyFit Academia, unidade Centro Rio. Fortalecimento, hipertrofia, reabilitação de lesões e emagrecimento.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -65,13 +65,23 @@
     transform: skewY(-1.2deg);
     transform-origin: left;
   }
-  .stars{
-    display:inline-flex;
-    gap:6px;
-    color:var(--crimson);
-    font-size:14px;
-    letter-spacing:2px;
+  .step-badge{
+    width:52px;height:52px; margin-bottom:18px; display:flex; align-items:center; justify-content:center;
+    border-radius:50%; position:relative;
+    background: radial-gradient(circle at 30% 26%, #3a6fc4 0%, #103a86 45%, #00113a 100%);
+    box-shadow:
+      0 16px 20px -8px rgba(0,17,58,.5),
+      0 3px 6px rgba(0,17,58,.28),
+      inset 0 3px 4px rgba(255,255,255,.55),
+      inset 0 -8px 12px rgba(0,0,0,.4);
+    border:1px solid rgba(255,255,255,.15);
+    font-family:'Anton',sans-serif; color:#fff; font-size:20px;
   }
+  .step-badge::after{
+    content:""; position:absolute; top:6px; left:10px; width:16px; height:8px;
+    background:rgba(255,255,255,.5); border-radius:50%; filter:blur(2px);
+  }
+  .step-badge span{position:relative; z-index:1;}
 
   /* ---------- header ---------- */
   header{
@@ -288,7 +298,6 @@
     border-right:1px solid #e4e7f0;
   }
   .step:last-child{border-right:none;}
-  .step .stars{margin-bottom:14px;}
   .step h3{font-size:17px; color:var(--navy-deep); margin:0 0 10px; text-transform:none; font-family:'Manrope',sans-serif; font-weight:800;}
   .step p{color:var(--steel); font-size:14px; line-height:1.6; margin:0;}
   @media (max-width:900px){
@@ -339,7 +348,7 @@
     display:block; font-weight:500; font-size:12.5px; color:var(--steel); margin-top:4px;
     text-transform:none;
   }
-  .plan ul{list-style:none; margin:0 0 26px; padding:0; display:grid; gap:11px; flex:1;}
+  .plan ul{list-style:none; margin:0 0 26px; padding:0; display:grid; gap:11px; flex:1; align-content:start;}
   .plan ul li{
     display:flex; gap:10px; align-items:flex-start;
     font-size:14.5px; color:var(--steel); line-height:1.5;
@@ -451,7 +460,7 @@
     <div class="hero-copy">
       <span class="eyebrow">SkyFit Centro Rio · Personal Trainer</span>
       <h1>Seu treino,<br>do seu jeito. <span>Sem enrolação.</span></h1>
-      <p class="lead">Fortalecimento, hipertrofia ou reabilitação de lesão — a Viviane monta o plano certo pra sua fase, com acompanhamento de perto em cada treino.</p>
+      <p class="lead">Fortalecimento, hipertrofia ou reabilitação de lesão, a Viviane monta o plano certo pra sua fase, com acompanhamento de perto em cada treino.</p>
       <div class="hero-ctas">
         <a class="btn btn-primary" href="https://api.whatsapp.com/send?phone=5521987069989&text=Oi%20Viviane%2C%20quero%20come%C3%A7ar%20meu%20treino%20na%20SkyFit!" target="_blank" rel="noopener">Agendar avaliação</a>
         <a class="btn btn-ghost" href="#sobre">Conhecer a Viviane</a>
@@ -508,10 +517,10 @@
 <section class="about" id="sobre">
   <div class="wrap">
     <div class="about-quote reveal">
-      “Meu trabalho é te mostrar que dá pra treinar do seu jeito — com estratégia, não sofrimento.”
+      “Meu trabalho é te mostrar que dá pra treinar do seu jeito, com estratégia, não sofrimento.”
     </div>
     <div class="about-body reveal">
-      <p>Sou a Viviane, personal trainer na SkyFit Academia, unidade Centro Rio. Trabalho fortalecimento, hipertrofia, reabilitação de lesões e emagrecimento, sempre com acompanhamento de perto — treino ajustado pra sua fase, sua rotina e seu objetivo.</p>
+      <p>Sou a Viviane, personal trainer na SkyFit Academia, unidade Centro Rio. Trabalho fortalecimento, hipertrofia, reabilitação de lesões e emagrecimento, sempre com acompanhamento de perto. Treino ajustado pra sua fase, sua rotina e seu objetivo.</p>
       <p>Aqui o treino não é genérico: eu avalio seu momento antes de montar qualquer plano, e vou ajustando junto com você a cada etapa.</p>
       <ul class="about-list">
         <li>Avaliação individual antes de começar</li>
@@ -530,22 +539,22 @@
     </div>
     <div class="steps reveal-stagger reveal">
       <div class="step stagger-item">
-        <span class="stars">★ ★ ★</span>
+        <span class="step-badge"><span>1</span></span>
         <h3>Chamada no WhatsApp</h3>
         <p>Você me conta seu objetivo e sua rotina atual.</p>
       </div>
       <div class="step stagger-item">
-        <span class="stars">★ ★ ★</span>
+        <span class="step-badge"><span>2</span></span>
         <h3>Avaliação inicial</h3>
         <p>Entendo seu ponto de partida e o que precisa ajustar primeiro.</p>
       </div>
       <div class="step stagger-item">
-        <span class="stars">★ ★ ★</span>
+        <span class="step-badge"><span>3</span></span>
         <h3>Plano sob medida</h3>
         <p>Monto o treino certo pra sua fase: fortalecimento, hipertrofia, lesão ou emagrecimento.</p>
       </div>
       <div class="step stagger-item">
-        <span class="stars">★ ★ ★</span>
+        <span class="step-badge"><span>4</span></span>
         <h3>Acompanhamento</h3>
         <p>Ajustes constantes conforme você evolui, treino a treino.</p>
       </div>
@@ -598,7 +607,7 @@
         <a class="btn btn-primary" href="https://api.whatsapp.com/send?phone=5521987069989&text=Oi%20Viviane%2C%20quero%20saber%20mais%20sobre%20o%20plano%20ANUAL." target="_blank" rel="noopener">Falar sobre esse plano</a>
       </div>
     </div>
-    <p class="plans-note">Valores a combinar de acordo com objetivo e frequência semanal — fale com a Viviane pra montar a proposta certa.</p>
+    <p class="plans-note">Valores a combinar de acordo com objetivo e frequência semanal. Fale com a Viviane pra montar a proposta certa.</p>
   </div>
 </section>
 
@@ -615,15 +624,15 @@
       </div>
       <div class="qa stagger-item">
         <h3>Em quanto tempo vejo resultado?</h3>
-        <p>Depende do seu ponto de partida e consistência — na avaliação inicial a Viviane te dá uma expectativa realista.</p>
+        <p>Depende do seu ponto de partida e da sua consistência. Na avaliação inicial, a Viviane te dá uma expectativa realista.</p>
       </div>
       <div class="qa stagger-item">
         <h3>O treino é presencial na SkyFit?</h3>
-        <p>Sim, o acompanhamento acontece na SkyFit Academia — Centro Rio, com estrutura completa pra cada especialidade.</p>
+        <p>Sim, o acompanhamento acontece na SkyFit Academia, unidade Centro Rio, com estrutura completa pra cada especialidade.</p>
       </div>
       <div class="qa stagger-item">
         <h3>Como faço pra começar?</h3>
-        <p>Chama no WhatsApp e marca sua avaliação inicial — é o primeiro passo antes de montar seu plano.</p>
+        <p>Chama no WhatsApp e marca sua avaliação inicial. Esse é o primeiro passo antes de montar seu plano.</p>
       </div>
     </div>
   </div>
@@ -640,7 +649,7 @@
 <div class="stripe slant"></div>
 
 <footer>
-  <div class="wrap">© 2026 SkyFit Academia — Centro Rio — Viviane Personal Trainer. Fortalecendo a nossa nação.</div>
+  <div class="wrap">© 2026 SkyFit Academia · Centro Rio · Viviane Personal Trainer. Fortalecendo a nossa nação.</div>
   <div class="credit">Feito por <a href="https://instagram.com/R_ENAN_R" target="_blank" rel="noopener">@R_ENAN_R</a></div>
 </footer>
 
