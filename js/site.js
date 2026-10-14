@@ -120,4 +120,20 @@
   });
 
   if (location.hash === "#menu") openMenu();
+
+  var dock = document.querySelector(".dock");
+  var dockCtas = document.querySelectorAll(".hero .btn-primary, .closer a[href*='whatsapp']");
+  if (dock && dockCtas.length && "IntersectionObserver" in window) {
+    var visible = new Set();
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) visible.add(entry.target);
+        else visible.delete(entry.target);
+      });
+      document.body.classList.toggle("dock-idle", visible.size > 0);
+    }, { threshold: 0.4 });
+    dockCtas.forEach(function (node) { observer.observe(node); });
+  } else {
+    document.body.classList.remove("dock-idle");
+  }
 })();
