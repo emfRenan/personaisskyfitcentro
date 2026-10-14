@@ -1,0 +1,306 @@
+/* Mobile polish. Desktop layout stays on the rules already in each page. */
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+section[id] { scroll-margin-top: 76px; }
+
+.nav-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 2px;
+  background: transparent;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex: none;
+  touch-action: manipulation;
+}
+.nav-toggle:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+.nav-toggle-box {
+  position: relative;
+  display: block;
+  width: 20px;
+  height: 14px;
+}
+.nav-toggle-box span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: currentColor;
+  border-radius: 1px;
+  transition: transform .2s ease, opacity .2s ease, top .2s ease;
+}
+.nav-toggle-box span:nth-child(1) { top: 0; }
+.nav-toggle-box span:nth-child(2) { top: 6px; }
+.nav-toggle-box span:nth-child(3) { top: 12px; }
+.nav-toggle[aria-expanded="true"] .nav-toggle-box span:nth-child(1) {
+  top: 6px;
+  transform: rotate(45deg);
+}
+.nav-toggle[aria-expanded="true"] .nav-toggle-box span:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] .nav-toggle-box span:nth-child(3) {
+  top: 6px;
+  transform: rotate(-45deg);
+}
+
+.site-menu { display: none; }
+
+@media (max-width: 860px) {
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 80;
+    padding-top: env(safe-area-inset-top);
+  }
+  header .nav {
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 10px;
+    padding: 8px 12px 10px 16px;
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(12px, env(safe-area-inset-right));
+  }
+  header .brand {
+    flex: 1 1 auto;
+    min-width: 0;
+    gap: 8px;
+  }
+  header .brand .mark {
+    width: 36px;
+    height: 36px;
+    flex: none;
+  }
+  header .brand-name {
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    line-height: 1.15;
+    white-space: nowrap;
+  }
+  header .brand a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    text-decoration: none;
+  }
+  header .nav-toggle {
+    display: inline-flex;
+    order: 2;
+    margin-left: auto;
+  }
+  header:has(.site-menu.is-open) .nav-cta { display: none; }
+  header .nav-cta {
+    order: 3;
+    flex: 1 0 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    min-height: 48px;
+    margin: 0;
+    padding: 12px 18px;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    line-height: 1.25;
+    text-align: center;
+    white-space: normal;
+  }
+
+  .site-menu.is-open {
+    display: block;
+    background: #001433;
+    border-top: 1px solid rgba(255, 255, 255, .12);
+    padding: 4px 16px 16px;
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+    padding-bottom: max(16px, env(safe-area-inset-bottom));
+    max-height: min(70dvh, 560px);
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+  .menu-label {
+    margin: 12px 4px 2px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #a9b6dd;
+  }
+  .site-menu a {
+    display: flex;
+    align-items: center;
+    min-height: 48px;
+    padding: 12px 4px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1.3;
+    text-transform: none;
+    text-decoration: none;
+    color: #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+  }
+  .site-menu a:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: -2px;
+  }
+  .site-menu a.menu-whatsapp {
+    margin-top: 14px;
+    justify-content: center;
+    background: #b9133e;
+    color: #fff;
+    border: 0;
+    border-radius: 2px;
+    min-height: 48px;
+    padding: 14px 18px;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    line-height: 1.25;
+    text-align: center;
+  }
+
+  section[id] { scroll-margin-top: calc(124px + env(safe-area-inset-top)); }
+}
+
+@media (max-width: 720px) {
+  .wrap { padding-left: 20px; padding-right: 20px; }
+  section { padding: 56px 0; }
+  .section-head { margin-bottom: 28px; }
+  .hero { padding-top: 32px; }
+  .hero .wrap { padding-bottom: 36px; }
+  .hero h1 { line-height: 1.05; }
+  .hero p.lead,
+  .section-head p,
+  .spec-card p,
+  .about-body p,
+  .qa p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .step p,
+  .plan ul li { font-size: 15.5px; line-height: 1.5; }
+
+  .hero-ctas {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .hero-ctas .btn {
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .hero-stats { gap: 18px 22px; }
+  .hero-stats div { flex: 1 1 42%; min-width: 0; }
+  .hero-stats div b { font-size: 24px; letter-spacing: 0.01em; }
+  .hero-stats div span {
+    display: block;
+    margin-top: 4px;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    line-height: 1.45;
+  }
+  .hero-photo { max-width: min(340px, 100%); }
+  .hero-photo .tag {
+    left: 12px;
+    right: auto;
+    max-width: calc(100% - 24px);
+    font-size: 14px;
+    letter-spacing: 0.01em;
+    padding: 12px 16px;
+  }
+
+  .btn,
+  .btn-outline-navy,
+  .promo-price .btn {
+    min-height: 48px;
+    padding: 13px 18px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    line-height: 1.25;
+    text-align: center;
+    white-space: normal;
+    box-sizing: border-box;
+    touch-action: manipulation;
+  }
+  .trainer-actions { flex-direction: column; }
+  .trainer-actions .btn { width: 100%; }
+  .final .btn-primary {
+    max-width: 100%;
+    padding: 14px 20px;
+  }
+
+  .plans {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    overflow: visible;
+    margin: 0;
+    padding: 18px 0 0;
+    max-width: 100%;
+    scroll-snap-type: none;
+  }
+  .plans .plan {
+    flex: none;
+    width: auto;
+    min-width: 0;
+    scroll-snap-align: unset;
+  }
+  .plan .price { white-space: normal; }
+  .plan h3 { font-size: 24px; letter-spacing: 0.01em; line-height: 1.15; }
+  .scroll-hint { display: none; }
+
+  .amenity,
+  .promo,
+  .personal-cta,
+  .info-card { max-width: 100%; }
+  .amenity { white-space: normal; }
+  .hours-row { gap: 12px; }
+  .hours-row span:last-child { text-align: right; }
+
+  footer a,
+  .credit a,
+  .work-with-us a,
+  .social-row a,
+  .info-card a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 8px 2px;
+  }
+}
+
+@media (hover: none) {
+  .trainer-card:hover,
+  .plan:hover,
+  .btn-primary:hover,
+  .btn-ghost:hover,
+  .btn-outline:hover,
+  .spec-card:hover,
+  .step:hover,
+  .diff:hover,
+  .info-card:hover,
+  .promo:hover {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-toggle-box span { transition: none; }
+}
