@@ -560,6 +560,27 @@ main section.hero { padding: 28px 0 36px; }
 
 .trainer-body h3 { font-size: 22px; }
 
+.card-role {
+  margin: 0;
+  color: var(--crimson);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.notice {
+  margin-top: 16px;
+  padding: 14px 16px;
+  border-left: 4px solid var(--crimson);
+  border-radius: 0 14px 14px 0;
+  background: #fff3f6;
+  color: #5e2940;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
 .tags { display: flex; flex-wrap: wrap; gap: 8px; }
 
 .tag {
