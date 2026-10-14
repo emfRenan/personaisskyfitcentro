@@ -1,4 +1,11 @@
 {
+  "redirects": [
+    {
+      "source": "/jess-skyfit.html",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
